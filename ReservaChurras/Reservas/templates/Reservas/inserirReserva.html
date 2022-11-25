@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'Reservas/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'Reservas/css/style2.css' %}">
 </head>
 
 <body>
@@ -13,17 +13,20 @@
     {% include 'Reservas/header.html' %}
 
     <div class="container">
-        <h1>Faça uma Reserva</h1>
+        <h1 id="titulo">Faça uma Reserva</h1>
 
         <form action="" method="POST">
-            <fieldset style="width: max-content;">
-                <legend>Realize sua reserva</legend>
                 {% csrf_token %}
                 <table class='formulario'>
                     {{ formulario.as_table }}
                 </table>
-                <button type="submit">Cria Reserva</button>
-            </fieldset>
+
+            
+            <button type="submit">Confirmar</button>
+            <button>
+                <a href="{% url 'Reservas:lista-reservas' %}" style="text-decoration: none; color: white;">Cancelar</a>
+            </button>
+
         </form>
     </div>
 

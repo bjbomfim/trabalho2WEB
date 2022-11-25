@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'Reservas/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'Reservas/css/style2.css' %}">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
 
     <div class="container">
 
-        <h1>Lista de Reservas</h1>
+        <h1 id="titulo">Lista de Reservas</h1>
 
         <table>
             <tr><th>Motivo da reserva</th><th>Data da Reserva</th><th>Ações disponíveis</th></tr>
@@ -23,15 +23,17 @@
                 <td>{{ reserva.obs }}</td>
                 <td>{{reserva.dataReserva }}</td>
                 <td>
-                    <a href="{% url 'Reservas:atualiza-reservas' pk=reserva.id %}">Atualizar</a>|
+                    <a href="{% url 'Reservas:atualiza-reservas' pk=reserva.id %}">Atualizar</a> |
                     <a href="{% url 'Reservas:apaga-reservas' pk=reserva.id %}">Excluir</a>
                 </td>               
             </tr>
             {% empty %}
             <tr><th colspan="5">Ainda não tem contatos cadastrados</th></tr>
             {% endfor %}
-        </table>           
-
+        </table>
+        <button>
+            <a href="{% url 'Reservas:cria-reservas' %}" style="text-decoration: none; color: white;">Realizar reserva</a>
+        </button>           
     </div>
 
     {% include 'Reservas/footer.html' %}

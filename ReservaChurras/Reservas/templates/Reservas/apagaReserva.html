@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'Reservas/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'Reservas/css/style2.css' %}">
 </head>
 
 <body>
@@ -13,15 +13,22 @@
     {% include 'Reservas/header.html' %}
 
     <div class="container">
-        <h1>Excluir Reserva</h1>
+        <h1 id="titulo">Excluir Reserva</h1>
 
         <form method="POST">
             {% csrf_token %}
-            Confirma a remoção de {{ reserva }}?<br>
+
+            <table>
+
+                <td>
+                    <h2 id="perguntaRemocao">Confirma a exclusão da reserva "{{ reserva }}"?</h2>
+                </td>
+            </table>
+
             <button>
-                <a href="{% url 'Reservas:lista-reservas' %}" style="text-decoration: none; color: black;">Cancela</a>
+                <a href="{% url 'Reservas:lista-reservas' %}" style="text-decoration: none; color: white;">Cancelar</a>
             </button>
-            <input type="submit" value="Remove">
+            <input type="submit" value="Remover">
 
         </form>
     </div>
