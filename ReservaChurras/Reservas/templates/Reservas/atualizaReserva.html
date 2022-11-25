@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Reservas/css/style.css' %}">
+</head>
+
+<body>
+
+    {% include 'Reservas/header.html' %}
+
+    <div class="container">
+        <h1>Atualizando Reserva</h1>
+
+        <form method="POST" class='formulario'>
+            {% csrf_token %}
+            <table>
+                {{ reserva.as_table }}
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Atualiza"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    {% include 'Reservas/footer.html' %}
+
+</body>
+
+</html>
