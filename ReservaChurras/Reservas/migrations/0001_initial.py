@@ -14,8 +14,9 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Reserva',
             fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('dataReserva', models.DateField(help_text='Data da Reserva')),
-                ('obs', models.CharField(primary_key=True, serialize=False, help_text='Insira o motivo da reserva', max_length=300)),
+                ('obs', models.CharField(help_text='Insira o motivo da reserva', max_length=300)),
             ],
         ),
     ]

@@ -23,8 +23,8 @@
                 <td>{{ reserva.obs }}</td>
                 <td>{{reserva.dataReserva }}</td>
                 <td>
-                    <a href="{% url 'Reservas:atualiza-reservas' %}">Atualizar</a>|
-                    <a href="{% url 'Reservas:apaga-reservas'  %}">Excluir</a>
+                    <a href="{% url 'Reservas:atualiza-reservas' pk=reserva.id %}">Atualizar</a>|
+                    <a href="{% url 'Reservas:apaga-reservas' pk=reserva.id %}">Excluir</a>
                 </td>               
             </tr>
             {% empty %}
