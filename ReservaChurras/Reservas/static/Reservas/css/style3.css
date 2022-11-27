@@ -12,6 +12,8 @@
 
 }
 
+
+
 #titulo {
     text-align: center;
     color: rgb(205, 92, 92);
@@ -33,7 +35,7 @@ th {
     color: white;
 }
 
-table{
+table {
     width: 100%;
     margin-bottom: .5em;
     table-layout: fixed;
@@ -50,7 +52,8 @@ table{
     font-size: 15px;
 }
 
-input[type=submit],button {
+input[type=submit],
+button {
     background-color: rgb(205, 92, 92);
     font-weight: bold;
     color: white;
@@ -59,10 +62,10 @@ input[type=submit],button {
     text-decoration: none;
     cursor: pointer;
     float: right;
-    margin-right:5px ;
-  }
+    margin-right: 5px;
+}
 
-#perguntaRemocao{
+#perguntaRemocao {
     color: black;
     text-align: center;
 }
@@ -93,4 +96,20 @@ input[type=submit],button {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+#lista {
+    display: none;
+}
+
+#login{
+    transform: translate(40%, 30%);
+    color: rgb(205, 92, 92);
+    font-weight: bold;
+    font-size: 20px;
+    margin: 5px;
+}
+
+.loginMeio{
+    border: 5px red;
 }

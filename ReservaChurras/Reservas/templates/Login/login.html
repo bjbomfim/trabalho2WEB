@@ -1,32 +1,37 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Reservas/css/style3.css' %}">
+
     <title>Login</title>
-    {% load static %}
 </head>
 
 <body>
+    {% include 'Reservas/header.html' %}
 
     <div class="container">
-        <p>
-        <h1 id="titulo">Entre com seu apartamento e senha</h1>
-        </p>
         <form action="" method="post">
             {% csrf_token %} {% for field in form %}
-            <p>
+
+            <div class="loginMeio">
+            <p id="login">
                 {{ field.label }}: <br />
                 {{ field }}
             </p>
+        </div>
             {% endfor %}
 
             <button type="submit">
                 Entrar
-            </button> 
+            </button>
         </form>
     </div>
+    {% include 'Reservas/footer.html' %}
 
 </body>
 

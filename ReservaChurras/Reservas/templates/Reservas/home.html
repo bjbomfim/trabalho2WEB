@@ -20,10 +20,10 @@
         <table>
             {% for reserva in reservas %}
             <tr><th>Motivo da reserva</th><th>Data da Reserva</th><th>Ações disponíveis</th></tr>
-            <tr>
-                <td id="lista">{{ reserva.obs }}</td>
-                <td id="lista">{{reserva.dataReserva }}</td>
-                <td>
+            <tr id="lista">
+                <td>{{ reserva.obs }}</td>
+                <td >{{reserva.dataReserva }}</td>
+                <td >
                     <a href="{% url 'Reservas:atualiza-reservas' pk=reserva.id %}">Atualizar</a> |
                     <a href="{% url 'Reservas:apaga-reservas' pk=reserva.id %}">Excluir</a>
                 </td>               
@@ -35,7 +35,7 @@
         <button>
             <a href="{% url 'Reservas:cria-reservas' %}" style="text-decoration: none; color: white;">Realizar reserva</a>
         </button>
-        <button onclick="mostrarLista()">Exibir lista</button>
+        <button onclick="mostrarLista()" id="botaoLista">Exibir lista</button>
         
     </div>
 
