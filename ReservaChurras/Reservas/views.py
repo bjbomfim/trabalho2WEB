@@ -14,7 +14,6 @@ from django.contrib.auth.decorators import login_required
 class ReservaLista(View):
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
-            
             reservas = Reserva.objects.filter(apartamento__morador__username__contains=request.user.username)
             contexto = { 'reservas': reservas, }
             return render(request,'Reservas/home.html', contexto)
