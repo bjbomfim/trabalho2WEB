@@ -15,10 +15,10 @@ Desenvolvemos um site fictício de agendamento/reserva da churrasqueira do Hotel
  <br/> :heavy_check_mark: Aplicar HTML, CSS e Javascript no site desenvolvido
  <br/> :heavy_check_mark: Conter as quatro operações básicas em banco de dados (CRUD)
  <br/> :heavy_check_mark: Ser publicado em um provedor de serviço Web
- <br/> :heavy_check_mark: Usar Git para controle de versão e armazenado em um provedor de repositório Git de acesso público.
- <br/> :x: Realizar push semanalmente.
+ <br/> :heavy_check_mark: Usar Git para controle de versão e armazenado em um provedor de repositório Git de acesso público
+ <br/> :x: Realizar push semanalmente
  <br/> :x: Fazer uso do AJAX no site
- <br/> :heavy_check_mark: Login, acesso e/ou ações selecionadas por usuário. Cada usuário deverá ter visões diferentes do site.
+ <br/> :heavy_check_mark: Login, acesso e/ou ações selecionadas por usuário. Cada usuário deverá ter visões diferentes do site
 
 # Funcionamento do site
 
