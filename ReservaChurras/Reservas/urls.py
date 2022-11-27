@@ -1,5 +1,7 @@
 from django.urls import path
 from . import views
+from django.contrib.auth.views import LoginView, LogoutView
+from django.urls.base import reverse_lazy
 
 #urlpatterns = [path('lista/', views.Reservas.as_view(),
 # name='lista-reservas'),
@@ -13,4 +15,6 @@ urlpatterns = [
     path('apaga/<int:pk>/', views.ReservaApagar.as_view(), name='apaga-reservas'),
     path('', views.ReservaLista.as_view(), name='lista-reservas'),
 
+    path('login/', LoginView.as_view(template_name='Login/login.html'), name='login'),
+    path('logout/', LogoutView.as_view( next_page=reverse_lazy('Login:login'), ), name='logout'),
 ]
