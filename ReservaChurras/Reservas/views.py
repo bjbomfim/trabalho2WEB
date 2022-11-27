@@ -28,7 +28,9 @@ class ReservaCriar(View):
     def post(self, request, *args, **kwargs):
         formulario = ContatoModel2Form(request.POST)
         if formulario.is_valid():
+            
             reserva = formulario.save()
+            reserva.apartamento = Morador.objects.get(morador__username__contains=request.user.username)
             reserva.save()
         return HttpResponseRedirect(reverse_lazy('Reservas:lista-reservas'))
 
