@@ -15,10 +15,27 @@ class ReservaLista(View):
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
             reservas = Reserva.objects.filter(apartamento__morador__username__contains=request.user.username)
-            contexto = { 'reservas': reservas, }
-            return render(request,'Reservas/home.html', contexto)
+            firstAccess = Morador.objects.get(morador__username__contains=request.user.username).firstAccess
+            print(firstAccess)
+            if firstAccess:
+                contexto = { 'reservas': reservas, }
+                return render(request,'Reservas/home.html', contexto)
+            else:
+                return redirect("Login:alterarSenha")
         else:
             return redirect("Login:login")
+
+class SenhaAlterada(View):
+    def get(self, request, *args, **kwargs):
+        morador = Morador.objects.get(morador__username__contains=request.user.username)
+        contexto = { 'morador': morador, }
+        return render(request, "Login/alterarOk.html", contexto)
+
+    def post(self, request, *args, **kwargs):
+        morador = Morador.objects.get(morador__username__contains=request.user.username)
+        morador.firstAccess = True
+        morador.save()
+        return HttpResponseRedirect(reverse_lazy('Reservas:lista-reservas'))
 
 class ReservaCriar(View):
     def get(self, request, *args, **kwargs):
