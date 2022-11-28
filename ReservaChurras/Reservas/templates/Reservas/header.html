@@ -2,8 +2,10 @@
     <img id="imagemAgendamento" src="https://cdn-icons-png.flaticon.com/512/2472/2472332.png">
     <h1>CHURRASQUEIRA</h1>
     <p>AGENDAMENTO</p>
-    <div>
-        <h3>{{ user.username }}</h3>
-        <a href="{% url 'Login:logout' %}">Logout</a>
-    </div>
+    {% if user.is_authenticated %}
+        <div>
+            <h3>{{ user.username }}</h3>
+            <a href="{% url 'Login:logout' %}">Logout</a>
+        </div>
+    {% endif %}
 </div>
