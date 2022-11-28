@@ -18,8 +18,9 @@
         <h1 id="titulo">Lista de Reservas</h1>
 
         <table>
-            {% for reserva in reservas %}
             <tr><th>Motivo da reserva</th><th>Data da Reserva</th><th>Ações disponíveis</th></tr>
+
+            {% for reserva in reservas %}
             <tr id="lista">
                 <td>{{ reserva.obs }}</td>
                 <td >{{reserva.dataReserva }}</td>
