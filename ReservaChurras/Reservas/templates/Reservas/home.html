@@ -21,8 +21,8 @@
             <tr><th>Motivo da reserva</th><th>Data da Reserva</th><th>Ações disponíveis</th></tr>
 
             {% for reserva in reservas %}
-            <tr id="lista">
-                <td>{{ reserva.obs }}</td>
+            <tr class="lista" hidden >
+                <td >{{ reserva.obs }}</td>
                 <td >{{reserva.dataReserva }}</td>
                 <td >
                     <a href="{% url 'Reservas:atualiza-reservas' pk=reserva.id %}">Atualizar</a> |
